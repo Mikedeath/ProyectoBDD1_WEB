@@ -39,7 +39,7 @@
                         </EditItemTemplate>
 
                         <FooterTemplate>
-                            <asp:TextBox ID="txt_ClienteFooter" runat="server" />
+                            <asp:TextBox ID="txtCodigo_ClienteFooter" runat="server" />
                         </FooterTemplate>
 
                     </asp:TemplateField>

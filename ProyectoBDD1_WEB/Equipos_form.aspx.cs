@@ -97,7 +97,7 @@ namespace ProyectoBDD1_WEB
 
         protected void EquiposGV_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            SqlCommand update = new SqlCommand("Update_Equipos_SP", con);
+            SqlCommand update = new SqlCommand("UPDATE_EQUIPOS_SP", con);
             update.Parameters.AddWithValue(" @Codigo_de_Equipo", (EquiposGV.Rows[e.RowIndex].FindControl("txtCodigo_de_Equipo") as TextBox).Text.Trim());
             update.Parameters.AddWithValue(" @Nombre", (EquiposGV.Rows[e.RowIndex].FindControl("txtNombre") as TextBox).Text.Trim());
             update.Parameters.AddWithValue(" @Supervisor", (EquiposGV.Rows[e.RowIndex].FindControl("txtSupervisor") as TextBox).Text.Trim());
@@ -128,7 +128,7 @@ namespace ProyectoBDD1_WEB
 
         protected void EquiposGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            SqlCommand delete = new SqlCommand("Delete_Equipos_SP", con);
+            SqlCommand delete = new SqlCommand("DELETE_EQUIPOS_SP", con);
             //  delete.Parameters.AddWithValue("@Codigo_Cliente", Convert.ToInt32(EquiposGV.DataKeys[e.RowIndex].Value.ToString()));
             delete.Parameters.AddWithValue(" @Codigo_de_Equipo", (EquiposGV.Rows[e.RowIndex].FindControl("txtCodigo_de_Equipo") as TextBox).Text.Trim());
             delete.CommandType = CommandType.StoredProcedure;
