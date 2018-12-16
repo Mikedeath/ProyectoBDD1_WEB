@@ -41,7 +41,8 @@ namespace ProyectoBDD1_WEB
                 if (con.State == ConnectionState.Open)
                     con.Close();
             }
-         /////
+            /////
+            Response.Redirect("Menu_principal.aspx"); 
         }
     }
 

@@ -15,8 +15,8 @@ namespace ProyectoBDD1_WEB
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-QVVCS8VC;Initial Catalog=Proyect_BDD1;Integrated Security=True"); //AQUI SE CAMBIA LA BASE DE DATOS
         protected void Page_Load(object sender, EventArgs e)
         {
- 
-            if(!IsPostBack)
+
+            if (!IsPostBack)
             {
                 PopulateGridview();
 
@@ -29,12 +29,13 @@ namespace ProyectoBDD1_WEB
             SqlDataAdapter show = new SqlDataAdapter("SELECT * FROM Clientes", con);
             show.Fill(dtbl1);
 
-            if(dtbl1.Rows.Count > 0)
+            if (dtbl1.Rows.Count > 0)
             {
                 ClientesGV.DataSource = dtbl1;
                 ClientesGV.DataBind();
             }
-            else{
+            else
+            {
                 dtbl1.Rows.Add(dtbl1.NewRow());
                 ClientesGV.DataSource = dtbl1;
                 ClientesGV.DataBind();
@@ -52,9 +53,9 @@ namespace ProyectoBDD1_WEB
         {
             if (e.CommandName.Equals("Add"))
             {
-             
+
                 SqlCommand insert = new SqlCommand("ADD_CLIENTES_SP", con);
-                insert.Parameters.AddWithValue(" @Codigo_Cliente",(ClientesGV.FooterRow.FindControl("txtCodigo_ClienteFooter")as TextBox).Text.Trim());
+                insert.Parameters.AddWithValue(" @Codigo_Cliente", (ClientesGV.FooterRow.FindControl("txtCodigo_ClienteFooter") as TextBox).Text.Trim());
                 insert.Parameters.AddWithValue(" @Nombre", (ClientesGV.FooterRow.FindControl("txtNombreFooter") as TextBox).Text.Trim());
                 insert.Parameters.AddWithValue(" @Pais", (ClientesGV.FooterRow.FindControl("txtPaisFooter") as TextBox).Text.Trim());
                 insert.Parameters.AddWithValue(" @Correo_electronico", (ClientesGV.FooterRow.FindControl("txtCorreo_electronicoFooter") as TextBox).Text.Trim());
@@ -103,7 +104,7 @@ namespace ProyectoBDD1_WEB
         protected void ClientesGV_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             SqlCommand update = new SqlCommand("Update_Clientes_SP", con);
-            update.Parameters.AddWithValue(" @Codigo_Cliente",(ClientesGV.Rows[e.RowIndex].FindControl("txtCodigo_Cliente") as TextBox).Text.Trim());
+            update.Parameters.AddWithValue(" @Codigo_Cliente", (ClientesGV.Rows[e.RowIndex].FindControl("txtCodigo_Cliente") as TextBox).Text.Trim());
             update.Parameters.AddWithValue(" @Nombre", (ClientesGV.Rows[e.RowIndex].FindControl("txtNombre") as TextBox).Text.Trim());
             update.Parameters.AddWithValue(" @Pais", (ClientesGV.Rows[e.RowIndex].FindControl("txtPais") as TextBox).Text.Trim());
             update.Parameters.AddWithValue(" @Correo_electronico", (ClientesGV.Rows[e.RowIndex].FindControl("txtCorreo_electronico") as TextBox).Text.Trim());

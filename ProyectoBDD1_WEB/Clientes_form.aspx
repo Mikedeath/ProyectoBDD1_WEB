@@ -13,13 +13,13 @@
                 ShowHeaderWhenEmpty="true" DataKeyNames="Cliente_Codigo"
                 OnRowCommand="ClientesGV_RowCommand" OnRowEditing="ClientesGV_RowEditing" OnRowCancelingEdit="ClientesGV_RowCancelingEdit" OnRowUpdating="ClientesGV_RowUpdating" OnRowDeleting="ClientesGV_RowDeleting"
                 
-                CellPadding="4" ForeColor="#333333" GridLines="None">
+                CellPadding="4" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
+                <RowStyle BackColor="#EFF3FB" HorizontalAlign="Center" VerticalAlign="Middle" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
@@ -35,11 +35,11 @@
                         </ItemTemplate>
 
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtCodigo" Text='<%# Eval("Codigo_Cliente")%>' runat="server" />
+                            <asp:TextBox ID="txtCodigo_Cliente" Text='<%# Eval("Codigo_Cliente")%>' runat="server" />
                         </EditItemTemplate>
 
                         <FooterTemplate>
-                            <asp:TextBox ID="txtCodigoFooter" runat="server" />
+                            <asp:TextBox ID="txt_ClienteFooter" runat="server" />
                         </FooterTemplate>
 
                     </asp:TemplateField>

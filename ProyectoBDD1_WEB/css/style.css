@@ -8,20 +8,30 @@ body::before {
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0;
+  color:snow;
 }
 /* lets create a container and put it in the middle */
 .container {
   height: 100%;
-  width: 50%;
+  width: 20%;
   margin: auto;
+
+ 
 }
 .container > * {
   width: 91%;
     height: 29px;
 }
 .ctrl-standard.fx-bubbleDown {
-  color: #f0b81f;
-  border-color: #f0b81f;
+
+    border-color: #f0b81f;
+    top: 100px;
+    left: 0px;
+  
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
 }
 .ctrl-standard.fx-bubbleDown::after {
   bottom: auto;
@@ -31,9 +41,10 @@ body::before {
 .ctrl-standard.fx-bubbleDown.is-reversed::after {
   height: 300%;
 }
-.ctrl-standard.fx-bubbleDown.is-reversed:hover {
-  color: #f0b81f;
-}
+    .ctrl-standard.fx-bubbleDown.is-reversed:hover {
+        color: white;
+        background: #f0b81f;
+    }
 .ctrl-standard.fx-bubbleDown.is-reversed:hover::after {
   height: 0;
 }
