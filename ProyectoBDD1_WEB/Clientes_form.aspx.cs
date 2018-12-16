@@ -165,5 +165,10 @@ namespace ProyectoBDD1_WEB
                     con.Close();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
